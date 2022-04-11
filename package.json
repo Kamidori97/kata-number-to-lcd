@@ -1,0 +1,25 @@
+{
+  "name": "kata-number-to-lcd",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --watchAll --verbose"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kamidori97/kata-number-to-lcd.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kamidori97/kata-number-to-lcd/issues"
+  },
+  "homepage": "https://github.com/Kamidori97/kata-number-to-lcd#readme",
+  "dependencies": {
+    "jest": "^27.5.1"
+  },
+  "devDependencies": {
+    "@types/jest": "^27.4.1"
+  }
+}
