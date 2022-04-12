@@ -61,6 +61,16 @@ describe('Convert number to LCD', () => {
 
             expect(result).toBe(expectedResult);
         });
+
+        it('Should return LCD digit 0123456789', () => {
+            const result = NumberToLcd.convertToLCD('0123456789');
+            const expectedResult = '' +
+                ' _     _  _     _  _  _  _  _ \n' +
+                '| |  | _| _||_||_ |_   ||_||_|\n' +
+                '|_|  ||_  _|  | _||_|  ||_| _|\n';
+
+            expect(result).toBe(expectedResult);
+        });
     });
 
     describe('Change height and width of the LCD digits', () => {
