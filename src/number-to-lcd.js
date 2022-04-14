@@ -12,10 +12,7 @@ class NumberToLcd {
 
         const splitNumber = numbers.toString().split('');
         const digitLines = [];
-        let { width, height } = scale;
-
-        if (width < 1) width = 1;
-        if (height < 1) height = 1;
+        const { width, height } = scale;
 
         for (const number of splitNumber) {
             const lcdDigit = this.convertToLCD(number);
@@ -27,7 +24,6 @@ class NumberToLcd {
     }
 
     resizeDigitWidth = (digit, width) => {
-        width = width < 1 ? 1 : width;
         const height = 1;
         const digitLine = this.digitToDigitLine(digit, { width, height });
 
@@ -35,8 +31,13 @@ class NumberToLcd {
     }
 
     resizeDigitHeight = (digit, height) => {
-        height = height < 1 ? 1 : height;
         const width = 1;
+        const digitLine = this.digitToDigitLine(digit, { width, height });
+
+        return this.joinLCDDigitLines([digitLine]);
+    }
+
+    resizeDigit = (digit, { width, height }) => {
         const digitLine = this.digitToDigitLine(digit, { width, height });
 
         return this.joinLCDDigitLines([digitLine]);
@@ -44,6 +45,9 @@ class NumberToLcd {
 
     digitToDigitLine = (digit, scale) => {
         let { width, height } = scale;
+        if (width < 1) width = 1;
+        if (height < 1) height = 1;
+
         const EMPTY = ' ';
 
         const [

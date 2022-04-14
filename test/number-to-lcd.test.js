@@ -174,5 +174,32 @@ describe('Convert number to LCD', () => {
 
             expect(result).toBe(expectedResult);
         });
+
+        it('Should return LCD digit 4 with width 6 and height 8', () => {
+            const width = 6;
+            const height = 8;
+            const digit = NumberToLcd.convertToLCD(4);
+            const result = NumberToLcd.resizeDigit(digit, { width, height });
+            const expectedResult = '' +
+                '        \n' +
+                '|      |\n' +
+                '|      |\n' +
+                '|      |\n' +
+                '|      |\n' +
+                '|      |\n' +
+                '|      |\n' +
+                '|      |\n' +
+                '|______|\n' +
+                '       |\n' +
+                '       |\n' +
+                '       |\n' +
+                '       |\n' +
+                '       |\n' +
+                '       |\n' +
+                '       |\n' +
+                '       |\n';
+
+            expect(result).toBe(expectedResult);
+        });
     });
 });
